@@ -26,7 +26,7 @@ These parameters are transmitted to the **Modicon M340 PLC** via **HMI/OPC** and
 
 
 
-![](C:\REPO\Portfolio\MODICON-OPC-HMI-SQL\M340_FBD_CANopen\ContactDetection.gif)
+![](ContactDetection.gif)
 
 
 
@@ -60,7 +60,7 @@ As the tool wears down, the Z-servo drive current increases under identical cutt
 
 In one section where materials of unknown density must be processed, it proved effective to regulate the feed-rate in order to maintain a constant current in the spindle windings. This was achieved using a PID controller integrated into the feed-rate control loop.
 
-![](C:\REPO\Portfolio\MODICON-OPC-HMI-SQL\M340_FBD_CANopen\FeedPID.gif)
+![](FeedPID.gif)
 
 
 
@@ -86,7 +86,7 @@ The solution was to implement a rotating cleaning sequence: during each cleaning
 
 
 
-![](C:\REPO\Portfolio\MODICON-OPC-HMI-SQL\M340_FBD_CANopen\PulseJet.gif)
+![](PulseJet.gif)
 
 Each machining operation increments the counter `CTU_1` by 1. Once the counter reaches the threshold `PulseJetFreq`, logical latches `AND_5`, `AND_9`, and `AND_13` are enabled to pass the state of triggers `RS_8`, `RS_4`, and `RS_7`.
 

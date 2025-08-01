@@ -2,7 +2,7 @@
 
 In this system HMI (Magelis_1) acts as the communication gateway between the SQL/OPC layer and the PLC (M340).
 
-![](C:\REPO\Portfolio\MODICON-OPC-HMI-SQL\HMI_OPC_PLC\Modbus.gif)
+![](Modbus.gif)
 
 This approach was chosen because the PLC cannot interface directly with OPC or SQL servers. The data transfer sequence is as follows:
 
@@ -29,7 +29,7 @@ This approach was chosen because the PLC cannot interface directly with OPC or S
 
 This design ensures all data validation, control, and variable injection occur at the HMI level, providing a secure and transparent integration between enterprise data and field automation.
 
-![](C:\REPO\Portfolio\MODICON-OPC-HMI-SQL\HMI_OPC_PLC\HMI_Variables.gif)
+![](HMI_Variables.gif)
 
 
 
@@ -45,7 +45,7 @@ The HMI Magelis panel actively scans the OPC nodes, retrieving the latest values
 
 The HMI interface shown in the image represents the initial screen displayed after the operator scans the serial number of the product.
 
-![](C:\REPO\Portfolio\MODICON-OPC-HMI-SQL\HMI_OPC_PLC\HMI_1.jpg)
+![](HMI_1.jpg)
 
 
 
@@ -55,7 +55,7 @@ The numeric bar at the bottom of the screen (e.g., 211) displays the current est
 
 When launching a new mold, the default Z-position retrieved from SQL may be slightly off. In this case, the operators can enter manual correction mode. Using a rotary dial, operator can fine-tune the spindle’s Z-position up or down relative to the model default. The right-hand bar graph visually displays the offset in real time.
 
-![](C:\REPO\Portfolio\MODICON-OPC-HMI-SQL\HMI_OPC_PLC\HMI_2.jpg)
+![](HMI_2.jpg)
 
 
 
