@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Поиск по артикулу</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background-color: #fff;
+      padding: 2rem 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 6px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    form {
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      height: 3rem;
+      font-size: 2rem;
+      text-align: center;
+      border: 0.5px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem 0;
+      font-size: 1.25rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 0.75rem;
+    }
+
+    button:hover {
+      background-color: #0069d9;
+    }
+
+    .result {
+      margin-top: 1.5rem;
+      line-height: 1.4;
+    }
+
+    .result h2 {
+      font-size: 1.25rem;
+      margin: 0.5rem 0;
+      word-break: break-word;
+    }
+
+    .field {
+      display: flex;
+      justify-content: space-between;
+      margin: 0.5rem 0;
+      align-items: center;
+    }
+
+    .field label {
+      font-weight: normal;
+    }
+
+    .field .value {
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form method="post">
+      <input type="text" name="sku" value="{{ sku }}" placeholder="Введите SKU" autofocus>
+      <button type="submit">Поиск</button>
+    </form>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if result %}
+      <div class="result">
+        <h2>{{ result.SKU }} {{ result.DSC }}</h2>
+        <div class="field">
+          <label>Розница:</label>
+          <span class="value">{{ result.PRC|price_fmt }}</span>
+        </div>
+        <div class="field">
+          <label>Оперативный склад:</label>
+          <span class="value">{{ result.QTY_1 }}</span>
+        </div>
+        <div class="field">
+          <label>Склад поставщика:</label>
+          <span class="value">{{ result.QTY_2 }}</span>
+        </div>
+        <div class="field">
+          <label>Транзит:</label>
+          <span class="value">{{ result.QTY_3 }}</span>
+        </div>
+        <div class="field">
+          <label>Группа:</label>
+          <span class="value">{{ result.BRAND }}</span>
+        </div>		
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
