@@ -1,5 +1,3 @@
-# Modicon_M340-OPC-HMI-SQL
-
 ## Project Overview
 
 Cross-platform industrial automation project: selected modules using PLC, HMI, Fieldbus, SQL.
